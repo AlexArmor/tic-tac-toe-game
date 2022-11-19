@@ -27,7 +27,35 @@ function onGameFieldClick({ target }) {
 };
 
 function isGameOver() {
-    if (cellArray[0] === cellArray[1] && cellArray[0] === cellArray[2] || cellArray[0] === cellArray[3] && cellArray[0] === cellArray[6] || cellArray[0] === cellArray[3] && cellArray[0] === cellArray[6]) {
-        console.log('Win');
+    if (cellArray[0] === cellArray[1] && cellArray[0] === cellArray[2] && cellArray[0]) {
+        winnerMessage(cellArray[0]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[0] === cellArray[3] && cellArray[0] === cellArray[6] && cellArray[0]) {
+        winnerMessage(cellArray[0]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[0] === cellArray[4] && cellArray[0] === cellArray[8] && cellArray[0]) {
+        winnerMessage(cellArray[0]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[3] === cellArray[4] && cellArray[3] === cellArray[5] && cellArray[3]) {
+        winnerMessage(cellArray[3]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[6] === cellArray[7] && cellArray[6] === cellArray[8] && cellArray[6]) {
+        winnerMessage(cellArray[6]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[1] === cellArray[4] && cellArray[1] === cellArray[7] && cellArray[1]) {
+        winnerMessage(cellArray[1]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[2] === cellArray[5] && cellArray[2] === cellArray[8] && cellArray[2]) {
+        winnerMessage(cellArray[2]);
+        gameField.removeEventListener('click', onGameFieldClick);
+    } else if (cellArray[2] === cellArray[4] && cellArray[2] === cellArray[6] && cellArray[2]) {
+        winnerMessage(cellArray[2]);
+        gameField.removeEventListener('click', onGameFieldClick);
     }
+}
+
+function winnerMessage(winnerName) {
+    const message = document.createElement('p');
+    message.textContent = `${winnerName} - WIN!`;
+    gameField.after(message);
 }
