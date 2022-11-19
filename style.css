@@ -14,11 +14,13 @@
 }
 
 .cell {
+  font-family: sans-serif;
   background-color: teal;
   width: 90px;
   height: 90px;
-  font-size: 40px;
+  font-size: 50px;
   color: azure;
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
