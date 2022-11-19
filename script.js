@@ -56,6 +56,7 @@ function isGameOver() {
 
 function winnerMessage(winnerName) {
     const message = document.createElement('p');
+    message.classList.add('message');
     message.textContent = `${winnerName} - WIN!`;
     gameField.after(message);
 }
